@@ -1,0 +1,300 @@
+/* ============================================
+   DARK NAVY THEME — Form.css (Register)
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  background-color: #0b0f1a;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ========== PAGE WRAPPER ========== */
+.form-page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background-color: #0b0f1a;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ========== FLOATING ICON BADGES ========== */
+.form-badge {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  top: calc(50% - 200px);
+  right: calc(50% - 380px);
+  background: linear-gradient(135deg, #f43f8e, #ec4899);
+}
+
+.badge-bottom-left {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: linear-gradient(135deg, #06b6d4, #22d3ee);
+  bottom: calc(50% - 220px);
+  left: calc(50% - 380px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+/* ========== FORM CARD ========== */
+.form-card {
+  position: relative;
+  z-index: 10;
+  background: #151c2e;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 20px;
+  padding: 2.8rem 2.6rem;
+  width: 100%;
+  max-width: 440px;
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.08),
+    0 24px 64px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+.form-card h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.3px;
+}
+
+/* ========== FIELD WRAP ========== */
+.field-wrap {
+  position: relative;
+  margin-bottom: 0.85rem;
+}
+
+.field-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.field-wrap input {
+  width: 100%;
+  padding: 0.85rem 1.1rem 0.85rem 2.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  background: #1e2842;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.field-wrap input::placeholder {
+  color: #64748b;
+}
+
+.field-wrap input:focus {
+  border-color: rgba(99, 102, 241, 0.5);
+  background: #212d47;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+/* ========== FILE UPLOAD ========== */
+.file-area {
+  position: relative;
+  border: 1.5px dashed rgba(99, 102, 241, 0.3);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #1a2235;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.file-area:hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  background: #1e2842;
+}
+
+.file-area input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.file-area-icon { font-size: 1.3rem; }
+
+.file-area-text {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ========== SUBMIT BUTTON ========== */
+.submit-btn {
+  width: 100%;
+  padding: 0.88rem;
+  border-radius: 10px;
+  border: none;
+  background: #6366f1;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  letter-spacing: 0.3px;
+}
+
+.submit-btn:hover {
+  background: #5558e8;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(99, 102, 241, 0.5);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 600px) {
+  .form-page-wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-badge,
+  .badge-bottom-left {
+    width: 64px;
+    height: 64px;
+    font-size: 1.75rem;
+    top: calc(50% - 250px);
+    right: calc(50% - 250px);
+  }
+
+  .badge-bottom-left {
+    bottom: calc(50% - 250px);
+    left: calc(50% - 250px);
+  }
+
+  .form-card {
+    padding: 2rem 1.5rem;
+    max-width: calc(100% - 2rem);
+  }
+
+  .form-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .field-wrap input {
+    padding: 0.75rem 1rem 0.75rem 2.4rem;
+    font-size: 0.9rem;
+  }
+
+  .field-icon {
+    font-size: 0.9rem;
+    left: 0.75rem;
+  }
+
+  .file-area {
+    padding: 0.85rem 1rem;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .file-area-icon {
+    font-size: 1.1rem;
+  }
+
+  .file-area-text {
+    font-size: 0.85rem;
+  }
+
+  .submit-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-badge,
+  .badge-bottom-left {
+    display: none;
+  }
+
+  .form-page-wrapper {
+    padding: 1rem;
+  }
+
+  .form-card {
+    padding: 1.5rem 1.2rem;
+    border-radius: 16px;
+  }
+
+  .form-card h2 {
+    font-size: 1.35rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .field-wrap input {
+    padding: 0.7rem 0.8rem 0.7rem 2.2rem;
+    font-size: 0.85rem;
+  }
+
+  .field-wrap input::placeholder {
+    font-size: 0.8rem;
+  }
+
+  .file-area {
+    padding: 0.75rem 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .file-area-text {
+    font-size: 0.8rem;
+  }
+
+  .submit-btn {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}

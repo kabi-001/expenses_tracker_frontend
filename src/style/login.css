@@ -1,0 +1,252 @@
+/* ============================================
+   PREMIUM LOGIN PAGE
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background: #050816;
+  overflow: hidden;
+}
+
+.login-wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    #050816;
+  background-size: 50px 50px;
+}
+
+/* Glow Effects */
+
+.login-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #6366f1;
+  filter: blur(180px);
+  opacity: 0.18;
+  top: -100px;
+  left: -100px;
+}
+
+.login-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #06b6d4;
+  filter: blur(180px);
+  opacity: 0.15;
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Floating Shapes */
+
+.badge {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  animation: float 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+.badge-top-right {
+  top: 18%;
+  right: 22%;
+  background: linear-gradient(135deg, #ff4d9d, #ff2d55);
+  box-shadow: 0 20px 40px rgba(255, 45, 85, 0.35);
+}
+
+.badge-bottom-left {
+  bottom: 18%;
+  left: 22%;
+  background: linear-gradient(135deg, #00d4ff, #00b4d8);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.35);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Card */
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(21, 28, 46, 0.95);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px 35px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.08),
+    0 30px 60px rgba(0, 0, 0, 0.55);
+}
+
+.login-card h2 {
+  color: white;
+  font-size: 38px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Inputs */
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background: #202b46;
+  color: white;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.field input::placeholder {
+  color: #8b95b1;
+}
+
+.field input:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+  background: #263352;
+} 
+
+/* Button */
+
+.submit-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(99, 102, 241, 0.5);
+}
+
+.submit-btn:active {
+  transform: translateY(-1px);
+}
+
+.footer-link {
+  margin-top: 20px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.footer-link a {
+  color: #818cf8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footer-link a:hover {
+  color: #a5b4fc;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .badge {
+    display: none;
+  }
+
+  .login-card {
+    margin: 20px;
+    padding: 30px 25px;
+    max-width: calc(100% - 40px);
+  }
+
+  .login-card h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+
+  .field input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    margin: 15px;
+    padding: 25px 20px;
+  }
+
+  .login-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .field {
+    margin-bottom: 12px;
+  }
+
+  .field input {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .footer-link {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}
