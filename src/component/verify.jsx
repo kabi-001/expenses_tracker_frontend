@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "../style/verify.css";
+import { ENV } from "../config/env";
 
 function VerifyOtp() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ function VerifyOtp() {
     e.preventDefault();
 
     try {
-      const response = await axios.put("http://localhost:5000/api/verify", {
+      const response = await axios.put(`${ENV.Backend_API}/verify`, {
         email,
         otp,
       });

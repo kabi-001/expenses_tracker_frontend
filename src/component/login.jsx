@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "../style/login.css";
+import { ENV } from "../config/env";
 
 function Login() {
 
@@ -17,10 +18,10 @@ function Login() {
     try {
 
       const response = await axios.post(
-        "http://localhost:5000/api/login",
+        `${ENV.Backend_API}/login`,
         {
           email,
-          password
+          password,
         }
       );
 

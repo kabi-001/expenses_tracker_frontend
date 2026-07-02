@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "../style/expenseForm.css";
 import { useNavigate } from "react-router-dom";
+import { ENV } from "../config/env";
 
 function Expense() {
   const [expenses, setExpenses] = useState([]);
@@ -76,7 +77,7 @@ function Expense() {
   const getExpenses = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/expense/all", {
+      const res = await axios.get(`${ENV.Backend_API}/expense/all`, {
         headers: getAuthHeader(),
         params: {
           ...{
@@ -103,7 +104,7 @@ function Expense() {
   // Fetch all expenses without pagination for totals calculation
   const getAllExpensesForTotals = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/expense/all", {
+      const res = await axios.get(`${ENV.Backend_API}/expense/all`, {
         headers: getAuthHeader(),
         params: { limit: 10000, page: 1 }, // Fetch all records at once
       });
@@ -154,7 +155,7 @@ function Expense() {
         data.append("image", formData.image);
       }
 
-      await axios.post("http://localhost:5000/api/expense/add", data, {
+      await axios.post(`${ENV.Backend_API}/expense/add`, data, {
         headers: {
           ...getAuthHeader(),
           "Content-Type": "multipart/form-data",
@@ -186,7 +187,7 @@ function Expense() {
       }
 
       await axios.put(
-        `http://localhost:5000/api/expense/update/${editId}`,
+        `${ENV.Backend_API}/expense/update/${editId}`,
         data,
         {
           headers: {
@@ -208,7 +209,7 @@ function Expense() {
   const deleteExpense = async (id) => {
     if (!window.confirm("Delete this expense?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/expense/delete/${id}`, {
+      await axios.delete(`${ENV.Backend_API}/expense/delete/${id}`, {
         headers: getAuthHeader(),
       });
       toast.success("Expense deleted");

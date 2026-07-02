@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { PieChart } from "@mui/x-charts";
 import "../style/chart.css";
 import SummaryCards from "../pages/summaryCard";
+import { ENV } from "../config/env";
 
 
 function Chart() {
@@ -15,7 +16,7 @@ function Chart() {
  const fetchData = async () => {
   try {
     const res = await axios.get(
-      "http://localhost:5000/api/expense/all",
+      `${ENV.Backend_API}/expense/all`,
       {
         headers: getAuthHeader(),
       }

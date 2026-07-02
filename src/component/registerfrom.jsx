@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "../style/Form.css"
 import { useNavigate } from "react-router-dom";
+import { ENV } from "../config/env";
 
 function Form() {
   const [users, setUsers] = useState([]);
@@ -23,7 +24,7 @@ function Form() {
   // ================= GET USERS =================
   const getUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/user", {
+      const res = await axios.get(`${ENV.Backend_API}/user`, {
       });
 
       setUsers(res.data.data);
@@ -72,14 +73,14 @@ function Form() {
       if (isEditing) {
         data.append("_id", formData._id);
 
-        const response = await axios.put("http://localhost:5000/api/user", data, {
+        const response = await axios.put(`${ENV.Backend_API}/user`, data, {
 
         });
 
         toast.success(response.data.message || "User updated successfully");
         setIsEditing(false);
       } else {
-        const response = await axios.post("http://localhost:5000/api/user", data, {
+        const response = await axios.post(`${ENV.Backend_API}/user`, data, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
