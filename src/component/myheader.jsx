@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../style/myHeader.css"
-import { ENV } from "../config/env";
 
 import { useNavigate } from "react-router-dom";
 
@@ -21,7 +20,7 @@ function MyHeader() {
       if (!token) return;
 
       const response = await axios.get(
-        `${ENV.Backend_API}/me`,
+        "http://localhost:5000/api/me",
         {
           headers: {
             Authorization: `Bearer ${token}`,
