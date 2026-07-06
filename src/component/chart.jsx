@@ -15,7 +15,7 @@ function Chart() {
  const fetchData = async () => {
   try {
     const res = await axios.get(
-      "http://localhost:5000/api/expense/all",
+      `${process.env.VITE_BACKEND_URL}/api/expense/all`,
       {
         headers: getAuthHeader(),
       }

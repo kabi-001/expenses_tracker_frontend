@@ -17,7 +17,7 @@ function Login() {
     try {
 
       const response = await axios.post(
-        "http://localhost:5000/api/login",
+        `${process.env.VITE_BACKEND_URL}/api/user/login`,
         {
           email,
           password,
