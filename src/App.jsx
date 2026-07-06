@@ -17,6 +17,7 @@ import PieChart from "./pages/Dashboard";
 // import Home from "./component/home";
 function App(){
    console.log(import.meta.env.VITE_BACKEND_URL)
+   console.log("URL:", `${import.meta.env.VITE_BACKEND_URL}/api/user/login`);
 return (
   <>
     <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
