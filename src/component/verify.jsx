@@ -15,7 +15,7 @@ function VerifyOtp() {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`${process.env.VITE_BACKEND_URL}/api/verify`, {
+      const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/verify`, {
         email,
         otp,
       });

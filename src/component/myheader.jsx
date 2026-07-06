@@ -20,7 +20,7 @@ function MyHeader() {
       if (!token) return;
 
       const response = await axios.get(
-        ` ${process.env.BACKEND_URL}/api/user/profile`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/me`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

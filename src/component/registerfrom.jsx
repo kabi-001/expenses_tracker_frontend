@@ -23,7 +23,7 @@ function Form() {
   // ================= GET USERS =================
   const getUsers = async () => {
     try {
-      const res = await axios.get(`${process.env.VITE_BACKEND_URL}/api/user`, {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/user`, {
       });
 
       setUsers(res.data.data);
@@ -72,14 +72,14 @@ function Form() {
       if (isEditing) {
         data.append("_id", formData._id);
 
-        const response = await axios.put(`${process.env.VITE_BACKEND_URL}/api/user`, data, {
+        const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/user`, data, {
 
         });
 
         toast.success(response.data.message || "User updated successfully");
         setIsEditing(false);
       } else {
-        const response = await axios.post(`${process.env.VITE_BACKEND_URL}/api/user`, data, {
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/user`, data, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
